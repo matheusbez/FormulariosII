@@ -1,0 +1,16 @@
+<ion-item class="ion-margin-bottom" (click)="goToProfile()">
+  <ion-thumbnail slor="start">
+    <img src="{{ pokemonInfo.sprites.front_default }}">
+  </ion-thumbnail>
+  <ion-label>
+    <h2>{{pokemonInfo.name}}</h2>
+    <p>
+      <ion-chip *ngFor="let type of pokemonInfo.types" outline="true"
+      [ngClass]="{ 'fire': type.type.name == 'fire',
+                    'water': type.type.name == 'water',
+                    'eletric': type.type.name == 'electric' }">
+        <ion-label>{{ type.type.name }}</ion-label>
+      </ion-chip>
+    </p>
+  </ion-label>
+</ion-item>
